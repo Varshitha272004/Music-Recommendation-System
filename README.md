@@ -9,218 +9,143 @@
 
 ---
 
-# 📖 Project Overview
+# 🎵 Mood-Based Music Recommendation System
 
-The **Music Recommendation System** is an intelligent web application that recommends songs to users based on their selected mood, genre, artist preferences, and listening patterns. The application aims to provide personalized music suggestions through a user-friendly interface and recommendation algorithms.
-
-The system is built using **Python**, **Flask**, **HTML**, **CSS**, **JavaScript**, and **Supabase (PostgreSQL)** for storing user and music data.
+A smart Music Recommendation System that suggests songs based on the user's selected mood. The application uses Machine Learning techniques to provide personalized music recommendations through an interactive **Streamlit** interface while securely managing data using **Supabase**.
 
 ---
 
-# 🎯 Objectives
+## 📖 Overview
 
-- Recommend songs based on user preferences.
-- Provide personalized music suggestions.
-- Create an easy-to-use music browsing interface.
-- Improve user experience through intelligent recommendations.
-- Maintain user profiles and recommendation history.
+The Mood-Based Music Recommendation System is an AI-powered web application that helps users discover music that matches their current mood. Instead of manually searching through thousands of songs, users can simply choose a mood, and the system generates personalized song recommendations.
+
+The application provides a clean and interactive interface using Streamlit and leverages Machine Learning algorithms for intelligent recommendations.
 
 ---
 
-# ✨ Features
+## ✨ Features
 
-## 🎧 User Features
-
-- User Registration
-- Secure Login
-- Browse Music Library
-- Search Songs
-- Filter by Genre
-- Filter by Artist
-- Mood-Based Music Recommendation
-- Personalized Recommendations
-- Recently Played Songs
-- Favorite Songs
-- Playlist Management
-- User Profile Management
+- 🎭 Mood-Based Music Recommendations
+- 🎵 Personalized Song Suggestions
+- 🔍 Search Songs by Title
+- 🎼 Browse Songs by Genre
+- 🎤 Artist-Based Recommendations
+- ❤️ Favorite Songs Management
+- 📋 Recommendation History
+- 👤 User Authentication
+- 📊 Interactive Dashboard
+- ⚡ Fast Recommendation Engine
+- ☁️ Cloud Deployment using Streamlit
+- 🔒 Secure User Authentication with Supabase
 
 ---
 
-## 🎵 Music Features
+## 🛠️ Technology Stack
 
-- Song Catalog
-- Artist Details
-- Album Information
-- Genre Classification
-- Song Duration
-- Song Ratings
-- Trending Songs
-- Recommended Songs
+### Frontend
+- Streamlit
 
----
+### Backend
+- Python
 
-## 🤖 Recommendation Engine
+### Database
+- Supabase (PostgreSQL)
 
-- Mood-Based Recommendation
-- Genre-Based Recommendation
-- Artist-Based Recommendation
-- Similar Song Recommendation
-- Personalized Suggestions
-- Smart Filtering
-- Recommendation History
+### Machine Learning
+- Scikit-learn
+- Pandas
+- NumPy
 
----
+### Development Tools
+- Visual Studio Code
+- Git
+- GitHub
 
-## 📊 Dashboard
-
-- Total Songs
-- Total Artists
-- Total Genres
-- User Activity
-- Recommendation Statistics
-- Recently Added Songs
+### Deployment
+- Streamlit Community Cloud
 
 ---
 
-# 🏗️ System Architecture
+## 🏗️ System Architecture
 
 ```
                 User
                   │
                   ▼
-      HTML • CSS • JavaScript
+        Streamlit Web Interface
                   │
                   ▼
-            Flask Application
+      Music Recommendation Engine
                   │
         ┌─────────┴─────────┐
         ▼                   ▼
- Recommendation Engine   Supabase Database
+ Machine Learning      Supabase Database
+     Model             (PostgreSQL)
 ```
 
 ---
 
-# 🛠️ Technology Stack
-
-## Frontend
-
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap
-
-## Backend
-
-- Python
-- Flask
-
-## Database
-
-- Supabase
-- PostgreSQL
-
-## Machine Learning
-
-- Scikit-learn
-- Pandas
-- NumPy
-
-## Development Tools
-
-- Visual Studio Code
-- Git
-- GitHub
-
----
-
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```
 Music-Recommendation-System/
 │
-├── static/
-│   ├── css/
-│   ├── js/
-│   ├── images/
-│
-├── templates/
-│   ├── login.html
-│   ├── register.html
-│   ├── home.html
-│   ├── recommendations.html
-│   ├── profile.html
-│
+├── assets/
+├── data/
 ├── models/
-├── routes/
-├── database/
-├── recommendation/
+├── utils/
 ├── app.py
 ├── requirements.txt
-├── config.py
-└── README.md
+├── README.md
+└── .env
 ```
 
 ---
 
-# 📋 Modules
+## 📋 Modules
 
-## 🔐 Authentication Module
+### 🔐 Authentication Module
 
 - User Registration
 - User Login
-- Logout
+- Secure Authentication
 - Session Management
-- Password Encryption
 
 ---
 
-## 👤 User Module
+### 🎵 Music Recommendation Module
 
-- Profile Management
+- Mood-Based Recommendation
+- Genre-Based Recommendation
+- Artist-Based Recommendation
+- Similar Song Recommendation
+
+---
+
+### 👤 User Module
+
+- User Profile
 - Favorite Songs
-- Listening History
-- Recently Played
-
----
-
-## 🎵 Music Module
-
-- Browse Songs
-- Search Songs
-- Genre Filtering
-- Artist Filtering
-- Song Details
-
----
-
-## 🤖 Recommendation Module
-
-- Mood Analysis
-- Similar Song Detection
-- Personalized Recommendation
 - Recommendation History
 
 ---
 
-## ❤️ Playlist Module
+### 📊 Dashboard Module
 
-- Create Playlist
-- Add Songs
-- Remove Songs
-- Favorite Songs
+- User Activity
+- Recently Recommended Songs
+- Music Statistics
 
 ---
 
-# 🗄️ Database Schema
+## 🗄️ Database Schema
 
-The system uses **Supabase PostgreSQL**.
+The application uses **Supabase PostgreSQL** as the backend database.
 
-## Main Tables
-
-### users
+### Users
 
 | Field | Type |
-|-------|------|
+|------|------|
 | id | UUID |
 | username | VARCHAR |
 | email | VARCHAR |
@@ -228,11 +153,11 @@ The system uses **Supabase PostgreSQL**.
 
 ---
 
-### songs
+### Songs
 
 | Field | Type |
-|-------|------|
-| id | UUID |
+|------|------|
+| song_id | UUID |
 | title | VARCHAR |
 | artist | VARCHAR |
 | album | VARCHAR |
@@ -242,66 +167,46 @@ The system uses **Supabase PostgreSQL**.
 
 ---
 
-### playlists
+### Recommendations
 
 | Field | Type |
-|-------|------|
-| playlist_id | UUID |
-| user_id | UUID |
-| playlist_name | VARCHAR |
-
----
-
-### playlist_songs
-
-| Field | Type |
-|-------|------|
-| id | UUID |
-| playlist_id | UUID |
-| song_id | UUID |
-
----
-
-### recommendations
-
-| Field | Type |
-|-------|------|
-| id | UUID |
+|------|------|
+| recommendation_id | UUID |
 | user_id | UUID |
 | song_id | UUID |
 | recommended_at | TIMESTAMP |
 
 ---
 
-### favorites
+### Favorites
 
 | Field | Type |
-|-------|------|
-| id | UUID |
+|------|------|
+| favorite_id | UUID |
 | user_id | UUID |
 | song_id | UUID |
 
 ---
 
-# 🔄 Workflow
+## 🔄 Workflow
 
 ```
 User Login
       │
       ▼
-Browse Music
-      │
-      ▼
-Select Mood / Genre / Artist
+Select Mood
       │
       ▼
 Recommendation Engine
       │
       ▼
-Generate Personalized Songs
+Machine Learning Model
       │
       ▼
-Display Recommended Songs
+Recommended Songs
+      │
+      ▼
+Display Results
       │
       ▼
 Save Recommendation History
@@ -309,143 +214,154 @@ Save Recommendation History
 
 ---
 
-# 🔒 Security Features
+## 🔒 Security Features
 
-- Password Hashing
-- Secure Login
+- Secure User Authentication
 - Session Management
-- User Authentication
-- Protected Routes
+- Encrypted Password Storage
+- Protected User Data
 - Secure Database Access
 
 ---
 
-# ⚙️ Installation
+## ⚙️ Installation
 
-## Clone Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Varshitha272004/Music-Recommendation-System.git
 ```
 
----
-
-## Navigate to Project
+### Navigate to the Project Folder
 
 ```bash
 cd Music-Recommendation-System
 ```
 
----
-
-## Create Virtual Environment
+### Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
----
+### Activate the Virtual Environment
 
-## Activate Environment
-
-### Windows
+#### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-### Linux / macOS
+#### Linux/macOS
 
 ```bash
 source venv/bin/activate
 ```
 
----
-
-## Install Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
+### Configure Environment Variables
 
-## Configure Environment Variables
-
-Create a `.env` file.
+Create a `.env` file and add:
 
 ```env
 SUPABASE_URL=your_supabase_url
 SUPABASE_KEY=your_supabase_key
-
-SECRET_KEY=your_secret_key
 ```
 
----
-
-## Run Application
+### Run the Application
 
 ```bash
-python app.py
+streamlit run app.py
 ```
 
-Open the browser:
+The application will be available at:
 
 ```
-http://127.0.0.1:5000
+http://localhost:8501
+```
 
 ---
 
-# 🚀 Future Enhancements
+## 🌐 Live Demo
 
-- AI-Based Music Recommendation
-- Emotion Detection Using Facial Expressions
-- Voice Search
+🚀 **Live Application**
+
+> Add your deployed Streamlit application link here.
+
+Example:
+
+```
+https://your-app-name.streamlit.app
+```
+
+---
+
+## 📸 Screenshots
+
+Add screenshots of:
+
+- Login Page
+- Home Page
+- Mood Selection
+- Music Recommendations
+- Search Songs
+- User Dashboard
+
+---
+
+## 🚀 Future Enhancements
+
+- AI-Based Personalized Recommendations
 - Lyrics Search
-- Recently Trending Songs
-- Mobile Application
-- Dark Mode
+- Voice-Based Music Search
+- Emotion Detection using Facial Expressions
+- Playlist Generation
+- Recently Played Songs
+- Music Popularity Analytics
 - Multi-Language Support
+- Mobile Application
 - Admin Dashboard
-- Cloud Deployment
 
---
+---
 
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome!
 
-1. Fork the repository
-2. Create a feature branch
+1. Fork the repository.
+2. Create a new feature branch.
 
 ```bash
 git checkout -b feature-name
 ```
 
-3. Commit changes
+3. Commit your changes.
 
 ```bash
 git commit -m "Added new feature"
 ```
 
-4. Push changes
+4. Push to your branch.
 
 ```bash
 git push origin feature-name
 ```
 
-5. Open a Pull Request
+5. Create a Pull Request.
 
 ---
 
-# ⭐ Support
+## 📜 License
 
-If you found this project helpful, please consider giving it a ⭐ on GitHub.
+This project is developed for educational and learning purposes.
 
 ---
 
-## 📧 Contact
+## ⭐ Support
 
-For suggestions or improvements, feel free to open an issue or connect through GitHub.
-
-Happy Coding! 🎵🚀
+If you found this project useful, please consider giving it a **⭐ Star** on GitHub. Your support is appreciated!
