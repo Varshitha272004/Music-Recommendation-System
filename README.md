@@ -1,42 +1,28 @@
-# 🎵 Music Recommendation System
-
-<p align="center">
-<img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python">
-<img src="https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge&logo=streamlit">
-<img src="https://img.shields.io/badge/Supabase-Database-green?style=for-the-badge&logo=supabase">
-<img src="https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge&logo=scikitlearn">
-</p>
-
----
-
 # 🎵 Mood-Based Music Recommendation System
 
-A smart Music Recommendation System that suggests songs based on the user's selected mood. The application uses Machine Learning techniques to provide personalized music recommendations through an interactive **Streamlit** interface while securely managing data using **Supabase**.
+An intelligent **Music Recommendation System** built using **Python**, **Streamlit**, and **Machine Learning** that recommends songs based on the user's selected mood. The application analyzes user preferences and suggests relevant songs using a recommendation algorithm trained on a music dataset sourced from **Kaggle**.
 
 ---
 
-## 📖 Overview
+## 🌟 Overview
 
-The Mood-Based Music Recommendation System is an AI-powered web application that helps users discover music that matches their current mood. Instead of manually searching through thousands of songs, users can simply choose a mood, and the system generates personalized song recommendations.
+The Mood-Based Music Recommendation System is designed to help users discover music that matches their current mood. Instead of manually searching through thousands of songs, users simply select their mood, and the system recommends songs that best fit their emotional state.
 
-The application provides a clean and interactive interface using Streamlit and leverages Machine Learning algorithms for intelligent recommendations.
+The application is built with **Streamlit** for an interactive web interface and uses **Machine Learning** techniques for generating personalized recommendations.
 
 ---
 
 ## ✨ Features
 
-- 🎭 Mood-Based Music Recommendations
-- 🎵 Personalized Song Suggestions
+- 🎵 Mood-Based Music Recommendations
 - 🔍 Search Songs by Title
 - 🎼 Browse Songs by Genre
-- 🎤 Artist-Based Recommendations
-- ❤️ Favorite Songs Management
-- 📋 Recommendation History
-- 👤 User Authentication
-- 📊 Interactive Dashboard
+- 🎤 Artist-Based Song Suggestions
+- ❤️ Personalized Music Recommendations
+- 📋 Easy-to-Use Streamlit Interface
 - ⚡ Fast Recommendation Engine
-- ☁️ Cloud Deployment using Streamlit
-- 🔒 Secure User Authentication with Supabase
+- ☁️ Web-Based Deployment
+- 📊 Uses Real Music Dataset from Kaggle
 
 ---
 
@@ -48,13 +34,13 @@ The application provides a clean and interactive interface using Streamlit and l
 ### Backend
 - Python
 
-### Database
-- Supabase (PostgreSQL)
-
 ### Machine Learning
 - Scikit-learn
 - Pandas
 - NumPy
+
+### Dataset
+- Kaggle Music Dataset
 
 ### Development Tools
 - Visual Studio Code
@@ -66,165 +52,65 @@ The application provides a clean and interactive interface using Streamlit and l
 
 ---
 
-## 🏗️ System Architecture
-
-```
-                User
-                  │
-                  ▼
-        Streamlit Web Interface
-                  │
-                  ▼
-      Music Recommendation Engine
-                  │
-        ┌─────────┴─────────┐
-        ▼                   ▼
- Machine Learning      Supabase Database
-     Model             (PostgreSQL)
-```
-
----
-
 ## 📂 Project Structure
 
 ```
 Music-Recommendation-System/
 │
-├── assets/
-├── data/
-├── models/
-├── utils/
 ├── app.py
+├── recommendation.py
+├── model.pkl
+├── music.csv
 ├── requirements.txt
-├── README.md
-└── .env
+├── assets/
+├── utils/
+└── README.md
 ```
 
 ---
 
-## 📋 Modules
+## ⚙️ How It Works
 
-### 🔐 Authentication Module
-
-- User Registration
-- User Login
-- Secure Authentication
-- Session Management
-
----
-
-### 🎵 Music Recommendation Module
-
-- Mood-Based Recommendation
-- Genre-Based Recommendation
-- Artist-Based Recommendation
-- Similar Song Recommendation
+1. The user opens the application.
+2. Selects a mood or searches for a song.
+3. The recommendation engine processes the input.
+4. Similar songs are identified using Machine Learning.
+5. The recommended songs are displayed instantly.
 
 ---
 
-### 👤 User Module
+## 🧠 Recommendation Process
 
-- User Profile
-- Favorite Songs
-- Recommendation History
+The recommendation engine works by:
 
----
-
-### 📊 Dashboard Module
-
-- User Activity
-- Recently Recommended Songs
-- Music Statistics
+- Loading the Kaggle music dataset.
+- Cleaning and preprocessing the data.
+- Extracting important song features.
+- Computing similarity between songs.
+- Returning the most relevant recommendations based on user input.
 
 ---
 
-## 🗄️ Database Schema
+## 📊 Dataset
 
-The application uses **Supabase PostgreSQL** as the backend database.
+This project uses a publicly available **Music Dataset from Kaggle**.
 
-### Users
+The dataset contains information such as:
 
-| Field | Type |
-|------|------|
-| id | UUID |
-| username | VARCHAR |
-| email | VARCHAR |
-| password | TEXT |
+- Song Name
+- Artist
+- Album
+- Genre
+- Mood
+- Popularity
+- Duration
+- Audio Features
 
----
-
-### Songs
-
-| Field | Type |
-|------|------|
-| song_id | UUID |
-| title | VARCHAR |
-| artist | VARCHAR |
-| album | VARCHAR |
-| genre | VARCHAR |
-| mood | VARCHAR |
-| duration | INTEGER |
+> **Dataset Source:** Kaggle
 
 ---
 
-### Recommendations
-
-| Field | Type |
-|------|------|
-| recommendation_id | UUID |
-| user_id | UUID |
-| song_id | UUID |
-| recommended_at | TIMESTAMP |
-
----
-
-### Favorites
-
-| Field | Type |
-|------|------|
-| favorite_id | UUID |
-| user_id | UUID |
-| song_id | UUID |
-
----
-
-## 🔄 Workflow
-
-```
-User Login
-      │
-      ▼
-Select Mood
-      │
-      ▼
-Recommendation Engine
-      │
-      ▼
-Machine Learning Model
-      │
-      ▼
-Recommended Songs
-      │
-      ▼
-Display Results
-      │
-      ▼
-Save Recommendation History
-```
-
----
-
-## 🔒 Security Features
-
-- Secure User Authentication
-- Session Management
-- Encrypted Password Storage
-- Protected User Data
-- Secure Database Access
-
----
-
-## ⚙️ Installation
+## 🚀 Installation
 
 ### Clone the Repository
 
@@ -232,7 +118,7 @@ Save Recommendation History
 git clone https://github.com/Varshitha272004/Music-Recommendation-System.git
 ```
 
-### Navigate to the Project Folder
+### Navigate to the Project
 
 ```bash
 cd Music-Recommendation-System
@@ -246,13 +132,13 @@ python -m venv venv
 
 ### Activate the Virtual Environment
 
-#### Windows
+**Windows**
 
 ```bash
 venv\Scripts\activate
 ```
 
-#### Linux/macOS
+**Linux/macOS**
 
 ```bash
 source venv/bin/activate
@@ -264,68 +150,49 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Configure Environment Variables
-
-Create a `.env` file and add:
-
-```env
-SUPABASE_URL=your_supabase_url
-SUPABASE_KEY=your_supabase_key
-```
-
 ### Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
-The application will be available at:
-
-```
-http://localhost:8501
-```
-
----
-
-## 🌐 Live Demo
-
-🚀 **Live Application**
-
-> Add your deployed Streamlit application link here.
-
-Example:
-
-```
-https://your-app-name.streamlit.app
-```
+The application will open in your browser.
 
 ---
 
 ## 📸 Screenshots
 
-Add screenshots of:
+Add screenshots of the following pages:
 
-- Login Page
 - Home Page
 - Mood Selection
-- Music Recommendations
-- Search Songs
-- User Dashboard
+- Song Recommendation Results
+- Search Functionality
 
 ---
 
-## 🚀 Future Enhancements
+## 🎯 Use Cases
 
-- AI-Based Personalized Recommendations
+- Music Discovery
+- Mood-Based Playlist Suggestions
+- Personalized Music Experience
+- Learning Recommendation Systems
+- Machine Learning Demonstration Project
+
+---
+
+## 🔮 Future Enhancements
+
+- User Login & Profiles
+- Playlist Creation
+- Favorite Songs
+- AI-Based Emotion Detection
+- Voice-Based Song Search
 - Lyrics Search
-- Voice-Based Music Search
-- Emotion Detection using Facial Expressions
-- Playlist Generation
-- Recently Played Songs
-- Music Popularity Analytics
-- Multi-Language Support
+- Music Preview Integration
+- Real-Time Music Streaming API
 - Mobile Application
-- Admin Dashboard
+- Dark Mode
 
 ---
 
@@ -334,7 +201,7 @@ Add screenshots of:
 Contributions are welcome!
 
 1. Fork the repository.
-2. Create a new feature branch.
+2. Create a new branch.
 
 ```bash
 git checkout -b feature-name
@@ -343,7 +210,7 @@ git checkout -b feature-name
 3. Commit your changes.
 
 ```bash
-git commit -m "Added new feature"
+git commit -m "Add new feature"
 ```
 
 4. Push to your branch.
@@ -352,16 +219,11 @@ git commit -m "Added new feature"
 git push origin feature-name
 ```
 
-5. Create a Pull Request.
+5. Open a Pull Request.
 
 ---
 
-## 📜 License
-
-This project is developed for educational and learning purposes.
-
----
 
 ## ⭐ Support
 
-If you found this project useful, please consider giving it a **⭐ Star** on GitHub. Your support is appreciated!
+If you found this project useful, please consider giving it a ⭐ on GitHub!
